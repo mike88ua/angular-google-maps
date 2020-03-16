@@ -1,12 +1,11 @@
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
-import {Injectable, NgZone} from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
-import {AgmInfoWindow} from '../../directives/info-window';
+import { AgmInfoWindow } from '../../directives/info-window';
 
-import {GoogleMapsAPIWrapper} from '../google-maps-api-wrapper';
-import {InfoWindow, InfoWindowOptions} from '../google-maps-types';
-import {MarkerManager} from './marker-manager';
+import { GoogleMapsAPIWrapper } from '../google-maps-api-wrapper';
+import { InfoWindow, InfoWindowOptions } from '../google-maps-types';
+import { MarkerManager } from './marker-manager';
 
 @Injectable()
 export class InfoWindowManager {
@@ -34,7 +33,7 @@ export class InfoWindowManager {
   setPosition(infoWindow: AgmInfoWindow): Promise<void> {
     return this._infoWindows.get(infoWindow).then((i: InfoWindow) => i.setPosition({
       lat: infoWindow.latitude,
-      lng: infoWindow.longitude
+      lng: infoWindow.longitude,
     }));
   }
 
@@ -67,7 +66,7 @@ export class InfoWindowManager {
       content: infoWindow.content,
       maxWidth: infoWindow.maxWidth,
       zIndex: infoWindow.zIndex,
-      disableAutoPan: infoWindow.disableAutoPan
+      disableAutoPan: infoWindow.disableAutoPan,
     };
     if (typeof infoWindow.latitude === 'number' && typeof infoWindow.longitude === 'number') {
       options.position = {lat: infoWindow.latitude, lng: infoWindow.longitude};
@@ -80,7 +79,7 @@ export class InfoWindowManager {
     * Creates a Google Maps event listener for the given InfoWindow as an Observable
     */
   createEventObservable<T>(eventName: string, infoWindow: AgmInfoWindow): Observable<T> {
-    return Observable.create((observer: Observer<T>) => {
+    return new Observable((observer: Observer<T>) => {
       this._infoWindows.get(infoWindow).then((i: InfoWindow) => {
         i.addListener(eventName, (e: T) => this._zone.run(() => observer.next(e)));
       });

@@ -1,10 +1,9 @@
-import {Injectable, NgZone} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Observer} from 'rxjs/Observer';
+import { Injectable, NgZone } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
-import {AgmKmlLayer} from './../../directives/kml-layer';
-import {GoogleMapsAPIWrapper} from './../google-maps-api-wrapper';
-import {KmlLayer, KmlLayerOptions} from './../google-maps-types';
+import { AgmKmlLayer } from './../../directives/kml-layer';
+import { GoogleMapsAPIWrapper } from './../google-maps-api-wrapper';
+import { KmlLayer, KmlLayerOptions } from './../google-maps-types';
 
 declare var google: any;
 
@@ -23,15 +22,15 @@ export class KmlLayerManager {
    */
   addKmlLayer(layer: AgmKmlLayer) {
     const newLayer = this._wrapper.getNativeMap().then(m => {
-      return new google.maps.KmlLayer(<KmlLayerOptions>{
+      return new google.maps.KmlLayer({
         clickable: layer.clickable,
         map: m,
         preserveViewport: layer.preserveViewport,
         screenOverlays: layer.screenOverlays,
         suppressInfoWindows: layer.suppressInfoWindows,
         url: layer.url,
-        zIndex: layer.zIndex
-      });
+        zIndex: layer.zIndex,
+      } as KmlLayerOptions);
     });
     this._layers.set(layer, newLayer);
   }
@@ -51,7 +50,7 @@ export class KmlLayerManager {
    * Creates a Google Maps event listener for the given KmlLayer as an Observable
    */
   createEventObservable<T>(eventName: string, layer: AgmKmlLayer): Observable<T> {
-    return Observable.create((observer: Observer<T>) => {
+    return new Observable((observer: Observer<T>) => {
       this._layers.get(layer).then((m: KmlLayer) => {
         m.addListener(eventName, (e: T) => this._zone.run(() => observer.next(e)));
       });

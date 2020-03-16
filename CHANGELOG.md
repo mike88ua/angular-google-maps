@@ -1,3 +1,142 @@
+<a name="1.1.0"></a>
+# [1.1.0 emma](https://github.com/SebastianM/angular-google-maps/compare/1.0.0...1.1.0) (2019-11-21)
+
+
+### Bug Fixes
+
+* MapTypeControlStyle enum values ([8abe038](https://github.com/SebastianM/angular-google-maps/commit/8abe038)), closes [#1688](https://github.com/SebastianM/angular-google-maps/issues/1688)
+* **GoogleMapsAPIWrapper:** run Google Maps Apis outside of Angular ([#1714](https://github.com/SebastianM/angular-google-maps/issues/1714)) ([57685f2](https://github.com/SebastianM/angular-google-maps/commit/57685f2)), closes [#815](https://github.com/SebastianM/angular-google-maps/issues/815)
+
+
+### Features
+
+* **AgmGeocoder:** add geocoder service and tests ([#1743](https://github.com/SebastianM/angular-google-maps/issues/1743)) ([3549ccf](https://github.com/SebastianM/angular-google-maps/commit/3549ccf)), closes [#1694](https://github.com/SebastianM/angular-google-maps/issues/1694)
+* **AgmMarker:** add dblclick observable ([#1739](https://github.com/SebastianM/angular-google-maps/issues/1739)) ([c16e666](https://github.com/SebastianM/angular-google-maps/commit/c16e666)), closes [#1601](https://github.com/SebastianM/angular-google-maps/issues/1601)
+* google map language to default to LOCALE_ID ([#1754](https://github.com/SebastianM/angular-google-maps/issues/1754)) ([56a858e](https://github.com/SebastianM/angular-google-maps/commit/56a858e))
+* support google maps drawing library ([#1749](https://github.com/SebastianM/angular-google-maps/issues/1749)) ([a1a17a6](https://github.com/SebastianM/angular-google-maps/commit/a1a17a6))
+
+<a name="1.0.0"></a>
+# [1.0.0 emma-soon](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.7...1.0.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* **AgmCluster:** styles type and remove code duplication ([e55daaa](https://github.com/SebastianM/angular-google-maps/commit/e55daaa))
+* **AgmMap:** respect disableDefaultUI ([#1709](https://github.com/SebastianM/angular-google-maps/issues/1709)) ([b70cbbc](https://github.com/SebastianM/angular-google-maps/commit/b70cbbc)), closes [#933](https://github.com/SebastianM/angular-google-maps/issues/933)
+* **FitBounds:** add null check for null fit-bounds input ([2bf73de](https://github.com/SebastianM/angular-google-maps/commit/2bf73de))
+* **FitBounds:** remove old location on loc change ([#1710](https://github.com/SebastianM/angular-google-maps/issues/1710)) ([b746ca3](https://github.com/SebastianM/angular-google-maps/commit/b746ca3)), closes [#1512](https://github.com/SebastianM/angular-google-maps/issues/1512)
+
+
+### Features
+
+* Support for Bicycling Layer ([#1678](https://github.com/SebastianM/angular-google-maps/issues/1678)) ([a9b2a9c](https://github.com/SebastianM/angular-google-maps/commit/a9b2a9c))
+* use packagr to build as angular package format ([#1634](https://github.com/SebastianM/angular-google-maps/issues/1634)) ([df05277](https://github.com/SebastianM/angular-google-maps/commit/df05277)), closes [#1647](https://github.com/SebastianM/angular-google-maps/issues/1647) [#1157](https://github.com/SebastianM/angular-google-maps/issues/1157)
+* **AgmCircle:** add getNativeMap function ([23c42cd](https://github.com/SebastianM/angular-google-maps/commit/23c42cd))
+* **AgmMap:** add optional fit bounds padding ([29e4ebb](https://github.com/SebastianM/angular-google-maps/commit/29e4ebb)), closes [#1660](https://github.com/SebastianM/angular-google-maps/issues/1660) [#1471](https://github.com/SebastianM/angular-google-maps/issues/1471)
+* **AgmMap:** Add tilesloaded event to AgmMap ([#1706](https://github.com/SebastianM/angular-google-maps/issues/1706)) ([d4f1371](https://github.com/SebastianM/angular-google-maps/commit/d4f1371)), closes [#1701](https://github.com/SebastianM/angular-google-maps/issues/1701)
+* **FitBounds:** add fitBounds to agm-polyline-point ([74ceb2f](https://github.com/SebastianM/angular-google-maps/commit/74ceb2f)), closes [#1693](https://github.com/SebastianM/angular-google-maps/issues/1693)
+* **MarkerClusterer:** enable clusterclick event ([1f2724b](https://github.com/SebastianM/angular-google-maps/commit/1f2724b)), closes [#1272](https://github.com/SebastianM/angular-google-maps/issues/1272)
+
+<a name="1.0.0-beta.7"></a>
+# [1.0.0-beta.7 green-ink](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.6...1.0.0-beta.7) (2019-07-14)
+
+
+### Bug Fixes
+
+* google is not defined when using fitBounds ([#1652](https://github.com/SebastianM/angular-google-maps/issues/1652)) ([c9e1313](https://github.com/SebastianM/angular-google-maps/commit/c9e1313)), closes [#1586](https://github.com/SebastianM/angular-google-maps/issues/1586)
+* Remove "constructors" from interfaces ([2bb6102](https://github.com/SebastianM/angular-google-maps/commit/2bb6102))
+* **AgmCircle:** circle strokeWeight error ([0442aa0](https://github.com/SebastianM/angular-google-maps/commit/0442aa0)), closes [#770](https://github.com/SebastianM/angular-google-maps/issues/770)
+* **FitBounds:** correct distinct algorythm ([#1673](https://github.com/SebastianM/angular-google-maps/issues/1673)) ([75bcfa0](https://github.com/SebastianM/angular-google-maps/commit/75bcfa0))
+* **PolylinePoint:** prevent accessing undefined variable on change ([21efc4f](https://github.com/SebastianM/angular-google-maps/commit/21efc4f)), closes [#1597](https://github.com/SebastianM/angular-google-maps/issues/1597)
+
+
+### Features
+
+* Add placeId to map click events ([34f651b](https://github.com/SebastianM/angular-google-maps/commit/34f651b)), closes [#691](https://github.com/SebastianM/angular-google-maps/issues/691) [#1539](https://github.com/SebastianM/angular-google-maps/issues/1539)
+* Support for Transit Layer ([0f71222](https://github.com/SebastianM/angular-google-maps/commit/0f71222))
+* **AgmMap:** add controlSize option ([7922546](https://github.com/SebastianM/angular-google-maps/commit/7922546)), closes [#1646](https://github.com/SebastianM/angular-google-maps/issues/1646)
+* **AgmMap:** add tilt option ([49890c5](https://github.com/SebastianM/angular-google-maps/commit/49890c5))
+* **AgmMap:** fix fitBounds causing protractor timeout ([#1611](https://github.com/SebastianM/angular-google-maps/issues/1611)) ([565b6a7](https://github.com/SebastianM/angular-google-maps/commit/565b6a7)), closes [#1548](https://github.com/SebastianM/angular-google-maps/issues/1548)
+* **Polyline:** add IconSequences to Polylines ([46a39b7](https://github.com/SebastianM/angular-google-maps/commit/46a39b7)), closes [#721](https://github.com/SebastianM/angular-google-maps/issues/721)
+
+<a name="1.0.0-beta.6"></a>
+# [1.0.0-beta.6 opal-clarinet](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.5...1.0.0-beta.6) (2019-06-01)
+
+
+### Bug Fixes
+
+* **AgmCircle:** dragstart event misspelled ([8b2f2dc](https://github.com/SebastianM/angular-google-maps/commit/8b2f2dc)), closes [#1537](https://github.com/SebastianM/angular-google-maps/issues/1537)
+* **AgmMap:** _updateBounds not creating newBounds object ([#1553](https://github.com/SebastianM/angular-google-maps/issues/1553)) ([0e8f1ab](https://github.com/SebastianM/angular-google-maps/commit/0e8f1ab))
+* **core/marker:** drag and dragStart outputs ([#1604](https://github.com/SebastianM/angular-google-maps/issues/1604)) ([ba7c97e](https://github.com/SebastianM/angular-google-maps/commit/ba7c97e))
+
+
+### Features
+
+* add experimental angular 7/8 support ([e754bc7](https://github.com/SebastianM/angular-google-maps/commit/e754bc7))
+* **AgmMap:** add area restriction option ([7201a75](https://github.com/SebastianM/angular-google-maps/commit/7201a75)), closes [#1624](https://github.com/SebastianM/angular-google-maps/issues/1624)
+* **AgmMarker:** add drag and dragStart event support ([#1575](https://github.com/SebastianM/angular-google-maps/issues/1575)) ([1e6395d](https://github.com/SebastianM/angular-google-maps/commit/1e6395d))
+* **AgmMarkerCluster:** add calculator option ([#1599](https://github.com/SebastianM/angular-google-maps/issues/1599)) ([03ceb1c](https://github.com/SebastianM/angular-google-maps/commit/03ceb1c))
+* **GoogleMapsAPILoader:** change default API version ([#1577](https://github.com/SebastianM/angular-google-maps/issues/1577)) ([2fc1a21](https://github.com/SebastianM/angular-google-maps/commit/2fc1a21)), closes [#1573](https://github.com/SebastianM/angular-google-maps/issues/1573)
+* **polygon, polyline:** add path change event ([#1643](https://github.com/SebastianM/angular-google-maps/issues/1643)) ([f9352a8](https://github.com/SebastianM/angular-google-maps/commit/f9352a8))
+
+<a name="1.0.0-beta.5"></a>
+# [1.0.0-beta.5 yellow-tape](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.4...1.0.0-beta.5) (2018-09-24)
+
+
+### Bug Fixes
+
+* **Map:** fitBounds values that are undefined/null ([f9afd4b](https://github.com/SebastianM/angular-google-maps/commit/f9afd4b)), closes [#1505](https://github.com/SebastianM/angular-google-maps/issues/1505) [#1504](https://github.com/SebastianM/angular-google-maps/issues/1504)
+
+
+<a name="1.0.0-beta.4"></a>
+# [1.0.0-beta.4 beryl-cobra](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.3...1.0.0-beta.4) (2018-09-22)
+
+This release adds the long awaited auto fitBounds feature: https://github.com/SebastianM/angular-google-maps/pull/1389
+
+### Bug Fixes
+
+* **AgmPolygon:** double click ([#1442](https://github.com/SebastianM/angular-google-maps/issues/1442)) ([ca0b8f0](https://github.com/SebastianM/angular-google-maps/commit/ca0b8f0)), closes [#1202](https://github.com/SebastianM/angular-google-maps/issues/1202)
+* **polyline:** icon to icons ([fc042ae](https://github.com/SebastianM/angular-google-maps/commit/fc042ae)), closes [#948](https://github.com/SebastianM/angular-google-maps/issues/948)
+
+
+### Features
+
+* **AgmMarker:** add rightclick support ([#1443](https://github.com/SebastianM/angular-google-maps/issues/1443)) ([8abefa0](https://github.com/SebastianM/angular-google-maps/commit/8abefa0)), closes [#1362](https://github.com/SebastianM/angular-google-maps/issues/1362)
+* **AgmMarker:** auto-convert string to Number for lat/lng ([#1424](https://github.com/SebastianM/angular-google-maps/issues/1424)) ([c1d6c6d](https://github.com/SebastianM/angular-google-maps/commit/c1d6c6d)), closes [#771](https://github.com/SebastianM/angular-google-maps/issues/771)
+* **AgmMarker:** include marker instance in markerClick emitter ([89b6e5c](https://github.com/SebastianM/angular-google-maps/commit/89b6e5c))
+* **core:** add rectangle support ([#1450](https://github.com/SebastianM/angular-google-maps/issues/1450)) ([2e4878b](https://github.com/SebastianM/angular-google-maps/commit/2e4878b)), closes [#570](https://github.com/SebastianM/angular-google-maps/issues/570)
+* **core:** support auto fitBounds ([4d3103c](https://github.com/SebastianM/angular-google-maps/commit/4d3103c))
+
+
+
+<a name="1.0.0-beta.3"></a>
+# [1.0.0-beta.3 orange-disk](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.2...1.0.0-beta.3) (2018-05-24)
+
+
+### Bug Fixes
+
+* **AgmMap:** memory leak when map gets destroyed ([6006617](https://github.com/SebastianM/angular-google-maps/commit/6006617))
+* **AgmPolygon:** createPolygon type fix ([2563cae](https://github.com/SebastianM/angular-google-maps/commit/2563cae))
+* **Lazy Loading:** check if google maps script was already loaded ([e513c57](https://github.com/SebastianM/angular-google-maps/commit/e513c57)), closes [#692](https://github.com/SebastianM/angular-google-maps/issues/692)
+* **LazyMapsAPILoader:** multiple google maps api scripts on page ([07de5a4](https://github.com/SebastianM/angular-google-maps/commit/07de5a4)), closes [#315](https://github.com/SebastianM/angular-google-maps/issues/315) [#775](https://github.com/SebastianM/angular-google-maps/issues/775) [#1260](https://github.com/SebastianM/angular-google-maps/issues/1260)
+
+
+### Features
+
+* **all packages**: Support angular 6 ([44fba48](https://github.com/SebastianM/angular-google-maps/commit/44fba48))
+* **AgmMap:** EventEmitter for maptypeid_changed event ([f9c23aa](https://github.com/SebastianM/angular-google-maps/commit/f9c23aa))
+* **AgmMarker:** add animation field to markers ([c57ab39](https://github.com/SebastianM/angular-google-maps/commit/c57ab39)), closes [#580](https://github.com/SebastianM/angular-google-maps/issues/580) [#852](https://github.com/SebastianM/angular-google-maps/issues/852)
+* **AgmMarker:** allow objects as label ([658de77](https://github.com/SebastianM/angular-google-maps/commit/658de77))
+
+
+### Performance Improvements
+
+* **AgmMap:** run resolve outside angular zone ([078c2a5](https://github.com/SebastianM/angular-google-maps/commit/078c2a5))
+
+### BREAKING CHANGES
+
+Angular 4.x is not officially supported anymore. Please update to Angular 5.x or 6.x.
+
 <a name="1.0.0-beta.2"></a>
 # [1.0.0-beta.2 angular-five](https://github.com/SebastianM/angular-google-maps/compare/1.0.0-beta.1...1.0.0-beta.2) (2017-10-31)
 
@@ -19,7 +158,7 @@
 * **snazzy-info-window:** support angular 4.x and 5.x ([28c9646](https://github.com/SebastianM/angular-google-maps/commit/28c9646))
 
 ### BREAKING CHANGES
-Angular 2.x is not officially supported anymore. Please update to Angular 4.x or 5.x. 
+Angular 2.x is not officially supported anymore. Please update to Angular 4.x or 5.x.
 
 
 <a name="1.0.0-beta.1"></a>
@@ -103,7 +242,7 @@ You can simply migrate by search/replace these class/selector names.
 
 The package structure also changes. The root directory now contains **esm** code (ES5 code with ES2015 modules).
 
-**A CommonJS compatible format and TS are not part of the package any more!  
+**A CommonJS compatible format and TS are not part of the package any more!
 This change aligns with structure of the @angular packages.**
 
 The styling of the maps is now more intuitive.
@@ -483,17 +622,17 @@ New:
 import {SebmGoogleMap} from 'angular2-google-maps/directives/google-map';
 ```
 
-* The module name has changed. So you have to change your import path.  
-  old: `angular2_google_maps/angular2_google_maps`  
+* The module name has changed. So you have to change your import path.
+  old: `angular2_google_maps/angular2_google_maps`
   new: `angular2-google-maps/core`
 * ES5 files that can be consumed using CommonJS are now in the root directory (old path was `/cjs/angular2_google_maps`)
 * The ES6 files directory has changed:
-  Old dir: `/es6/angular2_google_maps`  
+  Old dir: `/es6/angular2_google_maps`
   New dir: `/es6`
-* The TypeScript files directory has changed:  
-  Old dir: `/ts/angular2_google_maps`  
+* The TypeScript files directory has changed:
+  Old dir: `/ts/angular2_google_maps`
   New dir: `/ts`
-* The `/typings` directory with bundled typings was deleted.  
+* The `/typings` directory with bundled typings was deleted.
   (Typings are now in the root directory seperated by file)
 
 

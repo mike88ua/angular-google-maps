@@ -1,12 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
+import { Observable, Observer } from 'rxjs';
 
 import { AgmDataLayer } from './../../directives/data-layer';
 import { GoogleMapsAPIWrapper } from './../google-maps-api-wrapper';
 import { Data, DataOptions, Feature } from './../google-maps-types';
-
-declare var google: any;
 
 /**
  * Manages all Data Layers for a Google Map instance.
@@ -22,9 +19,9 @@ export class DataLayerManager {
    * Adds a new Data Layer to the map.
    */
   addDataLayer(layer: AgmDataLayer) {
-    const newLayer = this._wrapper.createDataLayer(<DataOptions>{
-      style: layer.style
-    })
+    const newLayer = this._wrapper.createDataLayer({
+      style: layer.style,
+    } as DataOptions)
     .then(d => {
       if (layer.geoJson) {
         this.getDataFeatures(d, layer.geoJson).then(features => d.features = features);
@@ -69,7 +66,7 @@ export class DataLayerManager {
    * Creates a Google Maps event listener for the given DataLayer as an Observable
    */
   createEventObservable<T>(eventName: string, layer: AgmDataLayer): Observable<T> {
-    return Observable.create((observer: Observer<T>) => {
+    return new Observable((observer: Observer<T>) => {
       this._layers.get(layer).then((d: Data) => {
         d.addListener(eventName, (e: T) => this._zone.run(() => observer.next(e)));
       });

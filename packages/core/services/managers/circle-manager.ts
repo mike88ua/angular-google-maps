@@ -1,11 +1,12 @@
-import {Injectable, NgZone} from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 
-import {Observable} from 'rxjs/Observable';
-import {Observer} from 'rxjs/Observer';
+import { Observable, Observer } from 'rxjs';
 
-import {AgmCircle} from '../../directives/circle';
-import {GoogleMapsAPIWrapper} from '../google-maps-api-wrapper';
+import { AgmCircle } from '../../directives/circle';
+import { GoogleMapsAPIWrapper } from '../google-maps-api-wrapper';
 import * as mapTypes from '../google-maps-types';
+
+declare var google: any;
 
 @Injectable()
 export class CircleManager {
@@ -28,7 +29,7 @@ export class CircleManager {
       strokePosition: circle.strokePosition,
       strokeWeight: circle.strokeWeight,
       visible: circle.visible,
-      zIndex: circle.zIndex
+      zIndex: circle.zIndex,
     }));
   }
 
@@ -43,7 +44,12 @@ export class CircleManager {
   }
 
   setOptions(circle: AgmCircle, options: mapTypes.CircleOptions): Promise<void> {
-    return this._circles.get(circle).then((c) => c.setOptions(options));
+    return this._circles.get(circle).then((c) => {
+      if (typeof options.strokePosition === 'string') {
+        options.strokePosition = google.maps.StrokePosition[options.strokePosition];
+      }
+      c.setOptions(options);
+    });
   }
 
   getBounds(circle: AgmCircle): Promise<mapTypes.LatLngBounds> {
@@ -79,8 +85,12 @@ export class CircleManager {
     return this._circles.get(circle).then((c) => { return c.setRadius(circle.radius); });
   }
 
+  getNativeCircle(circle: AgmCircle): Promise<mapTypes.Circle> {
+    return this._circles.get(circle);
+  }
+
   createEventObservable<T>(eventName: string, circle: AgmCircle): Observable<T> {
-    return Observable.create((observer: Observer<T>) => {
+    return new Observable((observer: Observer<T>) => {
       let listener: mapTypes.MapsEventListener = null;
       this._circles.get(circle).then((c) => {
         listener = c.addListener(eventName, (e: T) => this._zone.run(() => observer.next(e)));
